@@ -1,0 +1,11 @@
+T;Transacao 1;false;999999999;mah@mah.com;mariana;
+A;1;Arroz;20;true;Tio Joao;50
+M;2;Estante;1000;false;NA;110
+A;3;Feijão;10;false;DuCarioca;12
+V;4;Blusa;48;false;Dudalina;0
+M;5;Mesa;200;true;Tok&Stok;110
+A;6;Hamburguer;25;true;Perdigão;10
+A;7;Chocolate;5;true;Nestle;26
+V;8;Calça;36;true;Renner;500
+M;9;Mesa;100;false;MadeiraMaeira;500
+M;10;Cadeira;50;true;Artesano;200
