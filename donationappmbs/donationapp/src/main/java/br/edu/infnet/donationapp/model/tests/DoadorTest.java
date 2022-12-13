@@ -29,7 +29,7 @@ public class DoadorTest {
 		}
 
 		try {
-			Doador s3 = new Doador("creep", "6666666", null, null);
+			Doador s3 = new Doador("creep", "6666666", null, "Rua KKKK");
 			System.out.println(s3);
 		} catch (DoadorInvalidoException e) {
 			System.out.println("[ERRO] " + e.getMessage());

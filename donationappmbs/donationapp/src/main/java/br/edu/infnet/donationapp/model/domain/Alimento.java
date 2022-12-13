@@ -14,6 +14,8 @@ public class Alimento extends Produto {
 		super(id, nome, valor);
 		this.marca = marca;
 	}
+	
+	
 
 	@Override
 	public float calcValorIRPF() throws ValidadeAlimentoInvalidoException {

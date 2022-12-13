@@ -87,8 +87,8 @@ public class Transacao {
 	public boolean isFrete() {
 		return entregaComFrete;
 	}
-	public void setFrete(boolean web) {
-		this.entregaComFrete = web;
+	public void setFrete(boolean frete) {
+		this.entregaComFrete = frete;
 	}
 	public Doador getDoador() {
 		return doador;

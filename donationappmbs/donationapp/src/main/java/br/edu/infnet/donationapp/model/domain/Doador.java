@@ -57,6 +57,6 @@ public class Doador {
 		return email;
 	}
 	public String getEndereco() {
-		return email;
+		return endereco;
 	}
 }
