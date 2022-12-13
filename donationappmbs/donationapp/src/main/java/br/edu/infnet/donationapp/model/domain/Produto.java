@@ -41,13 +41,13 @@ public abstract class Produto {
 		return sb.toString();
 	}
 
-	public String getCodigo() {
+	public String getID() {
 		return id;
 	}
 	public String getNome() {
 		return nome;
 	}
-	public float getValor() {
+	public float getValorIRPF() {
 		return valorDeclaraçãoIRPF;
 	}	
 }

@@ -22,7 +22,7 @@ public class Alimento extends Produto {
 			throw new ValidadeAlimentoInvalidoException("O alimento foi fabricado após 12 meses...oppps..imprório para consumo!");
 		}
 		
-		return this.getValor() + (perecivel ? 3 : 0) + meses * 0.05f;
+		return this.getValorIRPF() + (perecivel ? 3 : 0) + meses * 0.05f;
 	}
 	
 	@Override
@@ -49,8 +49,8 @@ public class Alimento extends Produto {
 	public int getMeses() {
 		return meses;
 	}
-	public void setMeses(int tamanho) {
-		this.meses = tamanho;
+	public void setMeses(int meses) {
+		this.meses = meses;
 	}
 	public String getMarca() {
 		return marca;

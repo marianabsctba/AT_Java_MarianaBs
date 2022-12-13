@@ -56,36 +56,36 @@ public class TransacaoTest {
 		}
 
 		try {
-			Transacao t1 = new Transacao(new Doador("mari", "90455362", "mah_b@hotmail.com"), produtosP1);
+			Transacao t1 = new Transacao(new Doador("mari", "90455362", "mah_b@hotmail.com", "Rua X" ), produtosP1);
 			t1.setDescricao("Primeira doação");
-			t1.setWeb(false);
+			t1.setFrete(false);
 			t1.imprimir();
 		} catch (DoadorInvalidoException | TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 
 		try {
-			Transacao t2 = new Transacao(new Doador("ana", "99999999", "ann@ann.com.br"), produtosP2);
+			Transacao t2 = new Transacao(new Doador("ana", "99999999", "ann@ann.com.br", "Rua 558"), produtosP2);
 			t2.setDescricao("Segunda doação");
-			t2.setWeb(true);
+			t2.setFrete(true);
 			t2.imprimir();
 		} catch (DoadorInvalidoException | TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 
 		try {
-			Transacao t3 = new Transacao(new Doador("papi", "08000000", "mario@luiz.com"), produtosP3);
+			Transacao t3 = new Transacao(new Doador("papi", "08000000", "mario@luiz.com", "Rua 222"), produtosP3);
 			t3.setDescricao("Terceira doação");
-			t3.setWeb(true);
+			t3.setFrete(true);
 			t3.imprimir();
 		} catch (DoadorInvalidoException | TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 
 		try {
-			Transacao t4 = new Transacao(new Doador("deni", "12312312312", "deni@maezinha.com"), produtosP4);
+			Transacao t4 = new Transacao(new Doador("deni", "12312312312", "deni@maezinha.com", "Rua 99"), produtosP4);
 			t4.setDescricao("Quarta doação");
-			t4.setWeb(true);
+			t4.setFrete(true);
 			t4.imprimir();
 		} catch (DoadorInvalidoException | TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());
@@ -94,18 +94,18 @@ public class TransacaoTest {
 		try {
 			Transacao t5 = new Transacao(null, produtosP4);
 			t5.setDescricao("Quinta doação");
-			t5.setWeb(true);
+			t5.setFrete(true);
 			t5.imprimir();
 		} catch (TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());
 		}
 
 		try {
-			Doador d6 = new Doador("mariazinha", "12312312312", "maria@maria.com");
+			Doador d6 = new Doador("mariazinha", "12312312312", "maria@maria.com", "Rua kkkk");
 		
 			Transacao t6 = new Transacao(d6, null);
 			t6.setDescricao("Sexta doação");
-			t6.setWeb(true);
+			t6.setFrete(true);
 			t6.imprimir();
 		} catch (DoadorInvalidoException | TransacaoSemDoadorException | TransacaoSemProdutoException e) {
 			System.out.println("[ERRO] " + e.getMessage());

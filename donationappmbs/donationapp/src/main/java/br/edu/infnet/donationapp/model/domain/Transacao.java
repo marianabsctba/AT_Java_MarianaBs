@@ -12,7 +12,7 @@ import br.edu.infnet.donationapp.model.exceptions.TransacaoSemDoadorException;
 public class Transacao {
 
 	private String descricao;
-	private boolean web;
+	private boolean entregaComFrete;
 	private LocalDateTime data;
 	private Doador doador;
 	private List<Produto> produtos;
@@ -33,7 +33,7 @@ public class Transacao {
 		data = LocalDateTime.now();
 	}
 	
-    public String pegaPedido() {
+    public String pegaTransacao() {
         StringBuilder sb = new StringBuilder();
         sb.append(this.descricao);
         sb.append(";");
@@ -61,7 +61,7 @@ public class Transacao {
 		
 		return this.getData().format(formato)+";"+
 			   this.getDescricao()+";"+
-			   this.getSolicitante()+";"+
+			   this.getDoador()+";"+
 			   this.getProdutos().size()+"\r\n";
 	}
 		
@@ -73,7 +73,7 @@ public class Transacao {
 		
 		return  String.format("%s;%s;%s", 
 				descricao, 
-				web ? "web" : "loja",  
+				entregaComFrete ? "web" : "loja",  
 				data.format(formato)
 			);
 	}
@@ -84,13 +84,13 @@ public class Transacao {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public boolean isWeb() {
-		return web;
+	public boolean isFrete() {
+		return entregaComFrete;
 	}
-	public void setWeb(boolean web) {
-		this.web = web;
+	public void setFrete(boolean web) {
+		this.entregaComFrete = web;
 	}
-	public Doador getSolicitante() {
+	public Doador getDoador() {
 		return doador;
 	}
 	public List<Produto> getProdutos() {

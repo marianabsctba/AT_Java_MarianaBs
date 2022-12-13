@@ -23,7 +23,7 @@ import br.edu.infnet.donationapp.model.exceptions.TransacaoSemDoadorException;
 import br.edu.infnet.donationapp.model.exceptions.DoadorInvalidoException;
 import br.edu.infnet.donationapp.model.exceptions.ValorZeradoException;
 
-public class ArquivoTeste {
+public class ArquivoTest {
 
 	public static void main(String[] args) {
 
@@ -50,9 +50,9 @@ public class ArquivoTeste {
 					switch (campos[0].toUpperCase()) {
 					case "T":
 						try {
-							transacao = new Transacao(new Doador(campos[5], campos[3], campos[4]), produtos);
+							transacao = new Transacao(new Doador(campos[5], campos[3], campos[4], campos[5]), produtos);
 							transacao.setDescricao(campos[1]);
-							transacao.setWeb(Boolean.valueOf(campos[2]));
+							transacao.setFrete(Boolean.valueOf(campos[2]));
 						} catch (DoadorInvalidoException | TransacaoSemDoadorException
 								| TransacaoSemProdutoException e) {
 							System.out.println("[ERRO] " + e.getMessage());

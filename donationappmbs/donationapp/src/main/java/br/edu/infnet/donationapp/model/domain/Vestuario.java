@@ -22,7 +22,7 @@ public class Vestuario extends Produto {
 			throw new TamanhoVestuarioInvalidoException("O tamanho min da roupa para doação é 36!");
 		}
 		
-		return this.getValor() + (novo ? 3 : 0) + tamanho * 0.05f;
+		return this.getValorIRPF() + (novo ? 3 : 0) + tamanho * 0.05f;
 	}
 	
 	@Override

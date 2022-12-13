@@ -22,7 +22,7 @@ public class Movel extends Produto {
 			throw new TamanhoMovelInvalidoException("O tamanho do móvel está inválido! É maior do que 200cm!");
 		}
 		
-		return this.getValor() + (usado ? 3 : 0) + tamanho * 0.05f;
+		return this.getValorIRPF() + (usado ? 3 : 0) + tamanho * 0.05f;
 	}
 	
 	@Override
