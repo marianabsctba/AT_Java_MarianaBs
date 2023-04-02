@@ -1,0 +1,3 @@
+Arroz;Tio Joao;false;22.0;12
+Feijão;Camil;false;12.00;12
+Salsicha;Sadia;true;12.0;24

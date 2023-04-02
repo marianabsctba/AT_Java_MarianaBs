@@ -1,0 +1,4 @@
+Julio; 22222222;d@gmail.com; Rua 1
+Elberth; 9999999999;dois@gmail.com; Rua 2
+Pivotto; 666666666;tres@gmail.com; Rua 3
+Lu; 9999728829292;quatro@gmail.com; Rua 4
