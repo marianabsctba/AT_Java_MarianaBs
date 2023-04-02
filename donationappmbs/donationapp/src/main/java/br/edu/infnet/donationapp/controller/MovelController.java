@@ -6,14 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.donationapp.model.domain.Movel;
+import br.edu.infnet.donationapp.model.domain.Usuario;
 import br.edu.infnet.donationapp.model.service.MovelService;
 
 @Controller
 public class MovelController {
 	
-
 	@Autowired	
 	private MovelService movelService;
 
@@ -26,9 +27,9 @@ public class MovelController {
 	}
 
 	@GetMapping(value = "/movel/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model,  @SessionAttribute ("user") Usuario usuario) {
 
-		model.addAttribute("moveis", movelService.obterLista());
+		model.addAttribute("moveis", movelService.obterLista(usuario));
 
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -37,22 +38,27 @@ public class MovelController {
 	}
 
 	@PostMapping(value = "/movel/incluir")
-	public String incluir(Movel movel) {
+	public String incluir(Movel movel, @SessionAttribute ("user") Usuario usuario) {
 		System.out.println("Cadastrado com sucesso!!" + movel.toString());
+		
+		movel.setUsuario(usuario);
 
 		movelService.incluir(movel);
 		
 		msg = "movel " + movel.getNome() + " criado com sucesso!";
+
 
 		return "redirect:/movel/lista";
 	}
 
 	@GetMapping(value = "/movel/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
+		
+		Movel movel = movelService.obterPorId(id);
 
 		movelService.excluir(id);
 
-		msg = "Exclusão do movel ("+id+") feita com sucesso!";
+		msg = "Exclusão do movel " + movel.getNome() + " feito com sucesso!";
 
 		return "redirect:/movel/lista";
 	}

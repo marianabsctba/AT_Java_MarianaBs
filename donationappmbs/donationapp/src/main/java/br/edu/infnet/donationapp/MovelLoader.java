@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.donationapp.model.domain.Movel;
+import br.edu.infnet.donationapp.model.domain.Usuario;
 import br.edu.infnet.donationapp.model.service.MovelService;
 
 
@@ -36,11 +37,17 @@ public class MovelLoader implements ApplicationRunner {
 				while (linha != null) {
 
 					campos = linha.split(";");
+					
+					Usuario usuario = new Usuario();
+					usuario.setId(1);
+
 
 					Movel movel = new Movel(campos[0], Float.valueOf(campos[3]), campos[1]);
 					movel.setUsado(Boolean.valueOf(campos[2]));
 					movel.setTamanho(Integer.valueOf(campos[4]));
 
+					movel.setUsuario(usuario);
+					
 					movelService.incluir(movel);
 
 					System.out.println("Móvel " + movel.getNome() + " incluído com sucesso!");

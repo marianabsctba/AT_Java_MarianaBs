@@ -18,30 +18,25 @@
 		<form action="vestuario/incluir" method="post">
 			<h3>Cadastro de Vestuário</h3>
 
+			<c:import url="/WEB-INF/jsp/produto/cadastro.jsp" />
+
 			<div class="form-group">
-				<label>Nome: </label> <input type="text" class="form-control"
-					name="nome" value="Blusa"> 
-				<label>Marca:</label> <input type="text" class="form-control" name="marca" 
-				value="Gucci">
-				<label>Tamanho:</label> <input type="text" class="form-control" name="tamanho" 
-				value="39">
-				<label>Valor:</label> <input type="text" class="form-control" name="valor" 
-				value="289999.00">
+				<label>Marca:</label> <input type="text" class="form-control"
+					name="marca" value="Gucci"> <label>Tamanho:</label> <input
+					type="text" class="form-control" name="tamanho" value="39">
 			</div>
 
-					
+
 
 			<div class="form-group">
-				<label>É usado:</label> <select name="usado"
-					class="form-control">
+				<label>É usado:</label> <select name="usado" class="form-control">
 					<option value="false" selected>SIM</option>
 					<option value="true">NÂO</option>
 				</select>
 			</div>
-			
+
 			<div class="form-group">
-				<label>É roupa:</label> <select name="roupa"
-					class="form-control">
+				<label>É roupa:</label> <select name="roupa" class="form-control">
 					<option value="true" selected>SIM</option>
 					<option value="false">NÂO</option>
 				</select>

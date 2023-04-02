@@ -16,16 +16,14 @@
 	<div class="container">
 		<form action="movel/incluir" method="post">
 			<h3>Cadastro de Moveis</h3>
+			
+			<c:import url="/WEB-INF/jsp/produto/cadastro.jsp" />
 
 			<div class="form-group">
-				<label>Nome: </label> <input type="text" class="form-control"
-					name="nome" value="Estante"> 
 				<label>Marca:</label> <input type="text" class="form-control" name="marca" 
 				value="Moveleiro">
 				<label>Tamanho:</label> <input type="text" class="form-control" name="tamanho" 
 				value="39">
-				<label>Valor:</label> <input type="text" class="form-control" name="valor" 
-				value="29.00">
 			</div>
 
 					

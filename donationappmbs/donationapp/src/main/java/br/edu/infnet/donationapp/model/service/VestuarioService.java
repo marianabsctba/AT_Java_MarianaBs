@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.donationapp.model.domain.Alimento;
+import br.edu.infnet.donationapp.model.domain.Usuario;
 import br.edu.infnet.donationapp.model.domain.Vestuario;
 import br.edu.infnet.donationapp.model.repository.VestuarioRepository;
 
@@ -26,6 +27,11 @@ public class VestuarioService {
 
 	public Collection<Vestuario> obterLista() {
 		return (Collection<Vestuario>) vestuarioRepository.findAll();
+		
+	}
+	
+	public Collection<Vestuario> obterLista(Usuario usuario) {
+		return (Collection<Vestuario>) vestuarioRepository.obterLista(usuario.getId());
 		
 	}
 	

@@ -10,6 +10,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.donationapp.model.domain.Alimento;
+import br.edu.infnet.donationapp.model.domain.Usuario;
 import br.edu.infnet.donationapp.model.domain.Vestuario;
 import br.edu.infnet.donationapp.model.service.AlimentoService;
 import br.edu.infnet.donationapp.model.service.VestuarioService;
@@ -36,6 +37,10 @@ public class VestuarioLoader implements ApplicationRunner {
 				while (linha != null) {
 
 					campos = linha.split(";");
+					
+
+					Usuario usuario = new Usuario();
+					usuario.setId(1);
 
 					Vestuario vestuario = new Vestuario(campos[0], Float.valueOf(campos[3]),
 							campos[1]);
@@ -43,7 +48,7 @@ public class VestuarioLoader implements ApplicationRunner {
 					vestuario.setTamanho(Integer.valueOf(campos[4]));
 					vestuario.setRoupa(Boolean.valueOf(campos[5]));
 
-					
+					vestuario.setUsuario(usuario);
 					vestuarioService.incluir(vestuario);
 
 					System.out.println("Vestuário " + vestuario.getNome() + " incluído com sucesso!");
