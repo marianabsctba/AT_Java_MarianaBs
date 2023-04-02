@@ -15,7 +15,7 @@
 
 			<h3>Lista de produtos</h3>
 
-		<form action="/alimento" method="get">
+		<form action="/produto" method="get">
 		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
 				<strong>Sucesso!</strong> ${mensagem}
