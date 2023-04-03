@@ -1,0 +1,3 @@
+Blusa;Gucci;false;22000.0;38;true
+Sandália;Havaianas;false;25.00;39;false
+Calça;Hugo Boss;true;12000.0;44;true

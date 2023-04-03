@@ -1,0 +1,4 @@
+Freddie Mercury;fm@queen.com;queen;45;PF
+Ozzy Osbourne;oo@zy.com;paranoid;78;PF
+Amy Winehouse;amy@heaven.com;rehab;27;PF
+Jim Morrison;nanana@thebest.com;ridersOntheStorm;27;PF
