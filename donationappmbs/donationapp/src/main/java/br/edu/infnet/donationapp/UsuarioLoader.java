@@ -22,6 +22,11 @@ public class UsuarioLoader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		
+        Usuario admin = new Usuario("Adminisrtador", "admin@admin", "12345");
+
+        usuarioService.incluir(admin);
+        System.out.println("Administrador criado!\nLogin: "+ admin.getEmail() + "\nSenha: " + admin.getSenha() + "\n");
 
 		try {
 			String arq = "usuarios.txt";
@@ -35,15 +40,7 @@ public class UsuarioLoader implements ApplicationRunner {
 
 				while (linha != null) {
 
-					campos = linha.split(";");
-					
-					Usuario usuarioAdm = new Usuario(campos[0],campos[1],campos[2]);					
-					usuarioAdm.setIdade(Integer.valueOf(campos[3]));
-					usuarioAdm.setTipo(String.valueOf(campos[4]));
-					
-					usuarioService.incluir(usuarioAdm);
-
-					System.out.println("Usuario Administrador " + usuarioAdm.getNome() + " incluído com sucesso!");
+					campos = linha.split(";");					
 
 					Usuario usuario = new Usuario(campos[0],campos[1],campos[2]);					
 					usuario.setIdade(Integer.valueOf(campos[3]));

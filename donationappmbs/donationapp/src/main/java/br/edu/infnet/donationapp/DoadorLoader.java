@@ -14,6 +14,7 @@ import br.edu.infnet.donationapp.model.domain.Doador;
 import br.edu.infnet.donationapp.model.domain.Usuario;
 import br.edu.infnet.donationapp.model.service.DoadorService;
 
+
 @Order(2)
 @Component
 public class DoadorLoader implements ApplicationRunner {

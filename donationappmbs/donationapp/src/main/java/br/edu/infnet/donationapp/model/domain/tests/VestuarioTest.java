@@ -1,4 +1,4 @@
-package br.edu.infnet.donationapp.model.tests;
+package br.edu.infnet.donationapp.model.domain.tests;
 
 import br.edu.infnet.donationapp.model.domain.Vestuario;
 import br.edu.infnet.donationapp.model.exceptions.TamanhoVestuarioInvalidoException;
